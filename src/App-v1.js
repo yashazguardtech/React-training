@@ -53,10 +53,7 @@ const key = "1dbb129b";
 
 export default function App() {
   const [movies, setMovies] = useState([]);
-  const [watched, setWatched] = useState(function(){
-    const storevalue = localStorage.getItem("watched");
-    return storevalue?JSON.parse(storevalue):[];
-  });
+  const [watched, setWatched] = useState([]);
   const [isload,Setisload]=useState(false);
   const [error,Seterror]=useState("");
   const [query, setQuery] = useState("");
@@ -74,9 +71,6 @@ export default function App() {
     setWatched((watched) => [...watched, movie]);
   }
 
-useEffect(function(){
-  localStorage.setItem("watched",JSON.stringify(watched));
-},[watched])
 
   useEffect(function() {
     async function getmovie() {
