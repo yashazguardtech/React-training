@@ -26,6 +26,7 @@ const Curency = () => {
 
 
   return (
+    <>
     <div>
         <input
             type="number"
@@ -45,6 +46,26 @@ const Curency = () => {
       </select>
       <p>{ans}  {to}</p>
     </div>
+     <div>
+        <input
+            type="number"
+             onChange={(e) =>Setvalue(e.target.value)}
+        />
+     <select onChange={(e)=>Setfrom(e.target.value)} value={from}>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="CAD">CAD</option>
+        <option value="INR">INR</option>
+      </select>
+      <select onChange={(e)=>Setto(e.target.value)} value={to}>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="CAD">CAD</option>
+        <option value="INR">INR</option>
+      </select>
+      <p>{ans}  {to}</p>
+    </div>
+</>
   );
 }
 
